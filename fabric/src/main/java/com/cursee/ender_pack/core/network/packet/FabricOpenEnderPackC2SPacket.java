@@ -1,8 +1,9 @@
 package com.cursee.ender_pack.core.network.packet;
 
+import com.cursee.ender_pack.core.util.TrinketsUtil;
 import com.cursee.ender_pack.platform.Services;
-import dev.emi.trinkets.api.TrinketsApi;
 import net.fabricmc.fabric.api.networking.v1.PacketSender;
+import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.MinecraftServer;
@@ -25,9 +26,7 @@ public class FabricOpenEnderPackC2SPacket {
 		});
 
 		// TRINKET SLOT
-		TrinketsApi.getTrinketComponent(player).ifPresent(component -> {
-			if (component.isEquipped(Services.PLATFORM.getRegisteredEnderPackItem())) SHOULD_OPEN_ENDER_PACK.set(true);
-		});
+		if (FabricLoader.getInstance().isModLoaded("trinkets")) SHOULD_OPEN_ENDER_PACK.set(TrinketsUtil.checkForTrinket(player));
 
 		if (!SHOULD_OPEN_ENDER_PACK.get()) return;
 
