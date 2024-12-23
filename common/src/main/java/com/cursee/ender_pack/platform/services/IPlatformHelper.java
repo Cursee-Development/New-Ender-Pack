@@ -1,5 +1,10 @@
 package com.cursee.ender_pack.platform.services;
 
+import com.cursee.ender_pack.core.block.custom.entity.EnderPackBlockEntity;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.entity.BlockEntityType;
+
 public interface IPlatformHelper {
 
     /**
@@ -33,4 +38,8 @@ public interface IPlatformHelper {
 
         return isDevelopmentEnvironment() ? "development" : "production";
     }
+
+    BlockEntityType<EnderPackBlockEntity> getRegisteredEnderPackBlockEntity();
+    Block getRegisteredEnderPackBlock();
+    Item getRegisteredEnderPackItem();
 }

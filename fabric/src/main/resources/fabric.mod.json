@@ -17,6 +17,9 @@
     "entrypoints": {
         "main": [
             "com.cursee.ender_pack.EnderPackFabric"
+        ],
+        "client": [
+            "com.cursee.ender_pack.EnderPackClientFabric"
         ]
     },
     "mixins": [
