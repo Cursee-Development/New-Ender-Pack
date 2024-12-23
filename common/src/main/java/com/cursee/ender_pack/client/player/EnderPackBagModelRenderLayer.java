@@ -31,9 +31,14 @@ public class EnderPackBagModelRenderLayer <T extends LivingEntity, M extends Hum
     public void render(PoseStack poseStack, MultiBufferSource multiBufferSource, int lightness, T entity, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch) {
 
         final AtomicBoolean SHOULD_RENDER_BAG_MODEL = new AtomicBoolean(false);
+
         entity.getArmorSlots().forEach(itemStack -> {
             if (itemStack.is(Services.PLATFORM.getRegisteredEnderPackItem())) SHOULD_RENDER_BAG_MODEL.set(true);
         });
+
+        if (Services.PLATFORM.isModLoaded("trinkets") || Services.PLATFORM.isModLoaded("curios")) {
+            SHOULD_RENDER_BAG_MODEL.set(Services.PLATFORM.checkSlotsFromMods(entity));
+        }
 
         if (!SHOULD_RENDER_BAG_MODEL.get()) return;
 

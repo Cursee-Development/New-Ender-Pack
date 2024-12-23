@@ -1,6 +1,7 @@
 package com.cursee.ender_pack.platform.services;
 
 import com.cursee.ender_pack.core.block.custom.entity.EnderPackBlockEntity;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntityType;
@@ -42,4 +43,5 @@ public interface IPlatformHelper {
     BlockEntityType<EnderPackBlockEntity> getRegisteredEnderPackBlockEntity();
     Block getRegisteredEnderPackBlock();
     Item getRegisteredEnderPackItem();
+    boolean checkSlotsFromMods(LivingEntity entity);
 }
