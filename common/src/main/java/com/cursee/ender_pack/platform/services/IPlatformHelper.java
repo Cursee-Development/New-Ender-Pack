@@ -1,4 +1,4 @@
-package com.cursee.examplemod.platform.services;
+package com.cursee.ender_pack.platform.services;
 
 public interface IPlatformHelper {
 

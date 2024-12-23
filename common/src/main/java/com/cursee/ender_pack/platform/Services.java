@@ -1,7 +1,7 @@
-package com.cursee.examplemod.platform;
+package com.cursee.ender_pack.platform;
 
-import com.cursee.examplemod.Constants;
-import com.cursee.examplemod.platform.services.IPlatformHelper;
+import com.cursee.ender_pack.Constants;
+import com.cursee.ender_pack.platform.services.IPlatformHelper;
 
 import java.util.ServiceLoader;
 
