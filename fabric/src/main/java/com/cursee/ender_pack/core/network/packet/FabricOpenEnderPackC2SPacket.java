@@ -34,5 +34,4 @@ public class FabricOpenEnderPackC2SPacket {
 				Component.translatable("container.enderPack"))
 		);
 	}
-
 }

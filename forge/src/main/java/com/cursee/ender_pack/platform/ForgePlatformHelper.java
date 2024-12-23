@@ -11,6 +11,9 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.loading.FMLLoader;
+import top.theillusivec4.curios.api.CuriosApi;
+
+import java.util.concurrent.atomic.AtomicBoolean;
 
 public class ForgePlatformHelper implements IPlatformHelper {
 
@@ -49,7 +52,13 @@ public class ForgePlatformHelper implements IPlatformHelper {
 
     @Override
     public boolean checkSlotsFromMods(LivingEntity entity) {
-        // todo: implement curios functionality
-        return false;
+
+        final AtomicBoolean CURIOS_FOUND = new AtomicBoolean(false);
+
+        CuriosApi.getCuriosInventory(entity).ifPresent(iCuriosItemHandler -> {
+            if (iCuriosItemHandler.isEquipped(ModItemsForge.ENDER_PACK.get())) CURIOS_FOUND.set(true);
+        });
+
+        return CURIOS_FOUND.get();
     }
 }
