@@ -3,7 +3,7 @@ package com.cursee.ender_pack.core.registry;
 import com.cursee.ender_pack.core.block.custom.entity.EnderPackBlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 
-public class ModBlockEntityTypes {
+public class ModBlockEntityTypesFabric {
 
     public static void register() {}
 

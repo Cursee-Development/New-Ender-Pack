@@ -13,11 +13,11 @@ import net.minecraft.world.entity.LivingEntity;
 
 import java.util.concurrent.atomic.AtomicBoolean;
 
-public class EnderPackBagModelRenderLayer <T extends LivingEntity, M extends HumanoidModel<T>> extends RenderLayer<T, M> {
+public class EnderPackBagModelRendererLayer<T extends LivingEntity, M extends HumanoidModel<T>> extends RenderLayer<T, M> {
 
     private final EnderPackBagModel<T> BAG_MODEL;
 
-    public EnderPackBagModelRenderLayer(RenderLayerParent<T, M> renderLayerParent) {
+    public EnderPackBagModelRendererLayer(RenderLayerParent<T, M> renderLayerParent) {
         super(renderLayerParent);
         BAG_MODEL = new EnderPackBagModel<T>(Minecraft.getInstance().getEntityModels().bakeLayer(EnderPackClient.ENDER_PACK_LAYER));
     }

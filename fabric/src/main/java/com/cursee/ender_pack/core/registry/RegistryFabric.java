@@ -15,7 +15,7 @@ public class RegistryFabric {
 
     public static void register() {
         ModBlocksFabric.register();
-        ModBlockEntityTypes.register();
+        ModBlockEntityTypesFabric.register();
         ModItemsFabric.register();
         ModTabsFabric.register();
     }

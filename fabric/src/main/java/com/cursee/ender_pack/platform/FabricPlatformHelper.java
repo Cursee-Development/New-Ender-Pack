@@ -1,7 +1,7 @@
 package com.cursee.ender_pack.platform;
 
 import com.cursee.ender_pack.core.block.custom.entity.EnderPackBlockEntity;
-import com.cursee.ender_pack.core.registry.ModBlockEntityTypes;
+import com.cursee.ender_pack.core.registry.ModBlockEntityTypesFabric;
 import com.cursee.ender_pack.core.registry.ModBlocksFabric;
 import com.cursee.ender_pack.core.registry.ModItemsFabric;
 import com.cursee.ender_pack.platform.services.IPlatformHelper;
@@ -35,7 +35,7 @@ public class FabricPlatformHelper implements IPlatformHelper {
 
     @Override
     public BlockEntityType<EnderPackBlockEntity> getRegisteredEnderPackBlockEntity() {
-        return ModBlockEntityTypes.ENDER_PACK;
+        return ModBlockEntityTypesFabric.ENDER_PACK;
     }
 
     @Override
