@@ -37,7 +37,7 @@ public class EnderPackBagModelRendererLayer<T extends LivingEntity, M extends Hu
         });
 
         if (Services.PLATFORM.isModLoaded("trinkets") || Services.PLATFORM.isModLoaded("curios")) {
-            SHOULD_RENDER_BAG_MODEL.set(Services.PLATFORM.checkSlotsFromMods(entity));
+            SHOULD_RENDER_BAG_MODEL.set(SHOULD_RENDER_BAG_MODEL.get() || Services.PLATFORM.checkSlotsFromMods(entity));
         }
 
         if (!SHOULD_RENDER_BAG_MODEL.get()) return;
