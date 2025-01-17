@@ -45,7 +45,12 @@ public class FabricOpenEnderPackC2SPacket implements CustomPacketPayload {
 		final AtomicBoolean SHOULD_OPEN_ENDER_PACK = new AtomicBoolean(false);
 
 		// CHESTPLATE SLOT
-		player.getArmorSlots().forEach(itemStack -> {
+		// player.getArmorSlots().forEach(itemStack -> {
+		// 	if (itemStack.is(Services.PLATFORM.getRegisteredEnderPackItem())) SHOULD_OPEN_ENDER_PACK.set(true);
+		// });
+
+		// ANY SLOT
+		player.getAllSlots().forEach(itemStack -> {
 			if (itemStack.is(Services.PLATFORM.getRegisteredEnderPackItem())) SHOULD_OPEN_ENDER_PACK.set(true);
 		});
 
