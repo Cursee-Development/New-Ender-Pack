@@ -15,36 +15,46 @@ import java.util.concurrent.atomic.AtomicBoolean;
 
 public class EnderPackBagModelRendererLayer<T extends LivingEntity, M extends HumanoidModel<T>> extends RenderLayer<T, M> {
 
-    private final EnderPackBagModel<T> BAG_MODEL;
-
-    public EnderPackBagModelRendererLayer(RenderLayerParent<T, M> renderLayerParent) {
-        super(renderLayerParent);
-        BAG_MODEL = new EnderPackBagModel<T>(Minecraft.getInstance().getEntityModels().bakeLayer(EnderPackClient.ENDER_PACK_LAYER));
+    public EnderPackBagModelRendererLayer(RenderLayerParent<T, M> $$0) {
+        super($$0);
     }
 
     @Override
-    protected ResourceLocation getTextureLocation(T $$0) {
-        return EnderPackClient.ENDER_PACK_TEXTURE;
+    public void render(PoseStack poseStack, MultiBufferSource multiBufferSource, int i, T t, float v, float v1, float v2, float v3, float v4, float v5) {
+
     }
 
-    @Override
-    public void render(PoseStack poseStack, MultiBufferSource multiBufferSource, int lightness, T entity, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch) {
 
-        final AtomicBoolean SHOULD_RENDER_BAG_MODEL = new AtomicBoolean(false);
-
-        entity.getArmorSlots().forEach(itemStack -> {
-            if (itemStack.is(Services.PLATFORM.getRegisteredEnderPackItem())) SHOULD_RENDER_BAG_MODEL.set(true);
-        });
-
-        if (Services.PLATFORM.isModLoaded("trinkets") || Services.PLATFORM.isModLoaded("curios")) {
-            SHOULD_RENDER_BAG_MODEL.set(SHOULD_RENDER_BAG_MODEL.get() || Services.PLATFORM.checkSlotsFromMods(entity));
-        }
-
-        if (!SHOULD_RENDER_BAG_MODEL.get()) return;
-
-        poseStack.pushPose();
-        poseStack.translate(0.0d, 0.25d, 0.3125d);
-        RenderLayer.renderColoredCutoutModel(BAG_MODEL, getTextureLocation(entity), poseStack, multiBufferSource, lightness, entity, 1.0f, 1.0f, 1.0f);
-        poseStack.popPose();
-    }
+//    private final EnderPackBagModel<T> BAG_MODEL;
+//
+//    public EnderPackBagModelRendererLayer(RenderLayerParent<T, M> renderLayerParent) {
+//        super(renderLayerParent);
+//        BAG_MODEL = new EnderPackBagModel<T>(Minecraft.getInstance().getEntityModels().bakeLayer(EnderPackClient.ENDER_PACK_LAYER));
+//    }
+//
+//    @Override
+//    protected ResourceLocation getTextureLocation(T $$0) {
+//        return EnderPackClient.ENDER_PACK_TEXTURE;
+//    }
+//
+//    @Override
+//    public void render(PoseStack poseStack, MultiBufferSource multiBufferSource, int lightness, T entity, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch) {
+//
+//        final AtomicBoolean SHOULD_RENDER_BAG_MODEL = new AtomicBoolean(false);
+//
+//        entity.getArmorSlots().forEach(itemStack -> {
+//            if (itemStack.is(Services.PLATFORM.getRegisteredEnderPackItem())) SHOULD_RENDER_BAG_MODEL.set(true);
+//        });
+//
+//        if (Services.PLATFORM.isModLoaded("trinkets") || Services.PLATFORM.isModLoaded("curios")) {
+//            SHOULD_RENDER_BAG_MODEL.set(SHOULD_RENDER_BAG_MODEL.get() || Services.PLATFORM.checkSlotsFromMods(entity));
+//        }
+//
+//        if (!SHOULD_RENDER_BAG_MODEL.get()) return;
+//
+//        poseStack.pushPose();
+//        poseStack.translate(0.0d, 0.25d, 0.3125d);
+//        RenderLayer.renderColoredCutoutModel(BAG_MODEL, getTextureLocation(entity), poseStack, multiBufferSource, lightness, entity, 1.0f, 1.0f, 1.0f);
+//        poseStack.popPose();
+//    }
 }

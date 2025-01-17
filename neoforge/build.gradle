@@ -37,4 +37,5 @@ dependencies {
     implementation "net.neoforged:neoforge:${neoforge_version}"
 
     implementation "curse.maven:monolib-968432:5838463"
+    implementation "curse.maven:curios-309927:6076118"
 }

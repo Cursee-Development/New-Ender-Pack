@@ -17,7 +17,9 @@ public class EnderPackClientFabric implements ClientModInitializer {
     public void onInitializeClient() {
 
         OpenEnderPackKeyFabric.register();
+
         BlockEntityRenderers.register(ModBlockEntityTypesFabric.ENDER_PACK, EnderPackBlockEntityRenderer::new);
+
         EntityModelLayerRegistry.registerModelLayer(EnderPackClient.ENDER_PACK_LAYER, EnderPackBagModel::createBodyLayer);
 
         LivingEntityFeatureRendererRegistrationCallback.EVENT.register((entityType, livingEntityRenderer, livingEntityFeatureRendererRegistrationHelper, context) -> {

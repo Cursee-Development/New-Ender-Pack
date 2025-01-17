@@ -2,6 +2,7 @@ package com.cursee.ender_pack.core.item.custom;
 
 import com.cursee.ender_pack.platform.Services;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Holder;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
@@ -24,7 +25,7 @@ public class EnderPackItem extends Item implements Equipable {
     protected final ArmorItem.Type type;
 
     public EnderPackItem(ArmorMaterial armorMaterial, ArmorItem.Type armorItemType, Properties itemProperties) {
-        super(itemProperties.defaultDurability(armorMaterial.getDurabilityForType(armorItemType)));
+        super(itemProperties);
         this.type = armorItemType;
     }
 
@@ -33,8 +34,14 @@ public class EnderPackItem extends Item implements Equipable {
         return this.type.getSlot();
     }
 
+//    @Override
+//    public SoundEvent getEquipSound() {
+//        return SoundEvents.ARMOR_EQUIP_LEATHER;
+//    }
+
+
     @Override
-    public SoundEvent getEquipSound() {
+    public Holder<SoundEvent> getEquipSound() {
         return SoundEvents.ARMOR_EQUIP_LEATHER;
     }
 

@@ -9,5 +9,5 @@ public class ModItemsFabric {
 
     public static void register() {}
 
-    public static final Item ENDER_PACK = RegistryFabric.registerItem("ender_pack", () -> new EnderPackItem(ArmorMaterials.LEATHER, ArmorItem.Type.CHESTPLATE, new Item.Properties()));
+    public static final Item ENDER_PACK = RegistryFabric.registerItem("ender_pack", () -> new EnderPackItem(ArmorMaterials.LEATHER.value(), ArmorItem.Type.CHESTPLATE, new Item.Properties()));
 }

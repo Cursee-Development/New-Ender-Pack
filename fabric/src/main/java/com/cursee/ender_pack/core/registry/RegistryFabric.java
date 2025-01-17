@@ -21,18 +21,18 @@ public class RegistryFabric {
     }
 
     public static <T extends Block> T registerBlock(String objectID, Supplier<T> objectSupplier) {
-        return Registry.register(BuiltInRegistries.BLOCK, new ResourceLocation(Constants.MOD_ID, objectID), objectSupplier.get());
+        return Registry.register(BuiltInRegistries.BLOCK, ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, objectID), objectSupplier.get());
     }
 
     public static <T extends BlockEntityType<?>> T registerBlockEntityType(String objectID, Supplier<T> objectSupplier) {
-        return Registry.register(BuiltInRegistries.BLOCK_ENTITY_TYPE, new ResourceLocation(Constants.MOD_ID, objectID), objectSupplier.get());
+        return Registry.register(BuiltInRegistries.BLOCK_ENTITY_TYPE, ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, objectID), objectSupplier.get());
     }
 
     public static <T extends Item> T registerItem(String objectID, Supplier<T> objectSupplier) {
-        return Registry.register(BuiltInRegistries.ITEM, new ResourceLocation(Constants.MOD_ID, objectID), objectSupplier.get());
+        return Registry.register(BuiltInRegistries.ITEM, ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, objectID), objectSupplier.get());
     }
 
     public static <T extends CreativeModeTab> T registerTab(String objectID, Supplier<T> objectSupplier) {
-        return Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, new ResourceLocation(Constants.MOD_ID, objectID), objectSupplier.get());
+        return Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, objectID), objectSupplier.get());
     }
 }

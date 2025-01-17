@@ -26,9 +26,15 @@ public class EnderPackBagModel <T extends Entity> extends EntityModel<T> {
         // no-op
     }
 
+//    @Override
+//    public void renderToBuffer(PoseStack poseStack, VertexConsumer vertexConsumer, int packedLightIn, int packedOverlayIn, float red, float green, float blue, float alpha) {
+//        ENDER_PACK.render(poseStack, vertexConsumer, packedLightIn, packedOverlayIn, 1.0F, 1.0F, 1.0F, 1.0F);
+//    }
+
+
     @Override
-    public void renderToBuffer(PoseStack poseStack, VertexConsumer vertexConsumer, int packedLightIn, int packedOverlayIn, float red, float green, float blue, float alpha) {
-        ENDER_PACK.render(poseStack, vertexConsumer, packedLightIn, packedOverlayIn, 1.0F, 1.0F, 1.0F, 1.0F);
+    public void renderToBuffer(PoseStack poseStack, VertexConsumer vertexConsumer, int packedLight, int i1, int i2) {
+        this.ENDER_PACK.render(poseStack, vertexConsumer, packedLight, i1, i2);
     }
 
     public static LayerDefinition createBodyLayer() {
